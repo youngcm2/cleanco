@@ -15,7 +15,7 @@ in Finland, whereas "Ltd" in company name could mean UK, US or a number of other
 countries.
 
 ## How do I install it?
-Download it from this site and unzip the directory.
+Download it from this site and unzip the directory or get the package (https://www.nuget.org/packages/cleanco/)
 
 * Windows: Open the .sln file in a suitable Windows IDE (I use Visual Studio 2013)
 

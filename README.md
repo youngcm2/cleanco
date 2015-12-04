@@ -1,4 +1,4 @@
-# cleanco - clean organization names
+# cleanco C# - clean organization names
 
 ## What is it / what does it do?
 
@@ -17,32 +17,32 @@ countries.
 ## How do I install it?
 Download it from this site and unzip the directory.
 
-* Windows: Same thing but without `sudo`.
+* Windows: Open the .sln file in a suitable Windows IDE (I use Visual Studio 2013)
 
 ## How does it work?
 Let's look at some sample code.
 Prepare a string of a company name that you want to process:
 
-    >>> string businessName = "Some Big Pharma, LLC"
+    string businessName = "Some Big Pharma, LLC";
 
 Throw it into a new instance:
 
-    >>> var cleaner = new cleanco.CompanyCleaner(businessName)
+    var cleaner = new cleanco.CompanyCleaner(businessName);
 
 You can now get the company types:
 
-    >>> x.Type()
-    string[] {"Limited Liability Company"}
+    string[] types = x.Type();
+    (Displays {"Limited Liability Company"})
 
 ...the possible countries...
 
-    >>> x.country()
-    string[] {"United States of America", "Philippines"}
+    string[] countries = x.country()
+    (Displays {"United States of America", "Philippines"})
 
 ...and a clean version of the company name.
 
-    >>> x.CleanName()
-    "Some Big Pharma"
+    string cleanName = x.CleanName();
+    (Displays "Some Big Pharma")
 
 ## Are there bugs?
 You better believe it.  Please let me know or fork this project.  I'm sure some of the company suffixes are way incorrect and I'm missing a lot more information.

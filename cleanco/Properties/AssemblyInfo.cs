@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("cleanco")]
 [assembly: AssemblyProduct("cleanco")]
+[assembly: AssemblyCompany("Ivan Cronyn")]
+[assembly: AssemblyDescription("Company name processor")]
 
 [assembly: ComVisible(false)]
 

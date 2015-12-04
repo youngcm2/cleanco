@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/Cronan/cleanco/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/Cronan/cleanco</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First port of python project to C#.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>company cleaner</tags>
+  </metadata>
+</package>

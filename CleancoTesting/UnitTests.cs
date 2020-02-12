@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using cleanco;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentAssertions;
+using Xunit;
 
 namespace CleancoTesting
 {
-    [TestClass]
     public class UnitTests
     {
-        [TestMethod]
+        [Fact]
         public void BasicCleanup()
         {
             RunTests("Hello World", "cleanup of {0} ({1}) failed", new List<Tuple<string, string>>
@@ -22,7 +22,7 @@ namespace CleancoTesting
             });
         }
 
-        [TestMethod]
+        [Fact]
         public void MultiCleanup()
         {
             RunTests("Hello World", "cleanup of {0} ({1}) failed", new List<Tuple<string, string>>
@@ -36,7 +36,7 @@ namespace CleancoTesting
             }, true, true, true, true);
         }
 
-        [TestMethod]
+        [Fact]
         public void PreservingCleanup()
         {
             RunTests("preserving cleanup of {0} ({1}) failed", new List<Tuple<string, Tuple<string, string>>>
@@ -46,7 +46,7 @@ namespace CleancoTesting
             });
         }
 
-        [TestMethod]
+        [Fact]
         public void UmlautCleanup()
         {
             RunTests("preserving cleanup of {0} ({1}) failed", new List<Tuple<string, Tuple<string, string>>>
@@ -63,7 +63,7 @@ namespace CleancoTesting
             bool suffix = true, bool prefix = false, bool middle = false, bool multi = false)
         {
             foreach (var test in tests)
-                Assert.AreEqual(expected, new CompanyCleaner(test.Item2).CleanName(suffix, prefix, middle, multi),
+                expected.Should().Be(new CompanyCleaner(test.Item2).CleanName(suffix, prefix, middle, multi),
                     string.Format(errmsg, test.Item1, test.Item2));
         }
 
@@ -72,7 +72,7 @@ namespace CleancoTesting
         {
             foreach (var test in tests)
             {
-                Assert.AreEqual(test.Item2.Item2, new CompanyCleaner(test.Item2.Item1).CleanName(suffix, prefix, middle, multi),
+                test.Item2.Item2.Should().Be(new CompanyCleaner(test.Item2.Item1).CleanName(suffix, prefix, middle, multi),
                     string.Format(errmsg, test.Item1, test.Item2.Item1));
             }
         }
